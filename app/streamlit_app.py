@@ -18,7 +18,7 @@ model = joblib.load("src/diabetes_model.pkl")
 # ---------------------------
 # HEADER
 # ---------------------------
-st.title("🧠 Diabetes Prediction AI Dashboard")
+st.title("🧠 Diabetes Prediction")
 st.caption("Predict diabetes risk using machine learning based on patient health metrics.")
 
 st.divider()
