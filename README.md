@@ -1,68 +1,215 @@
-# Diabetes Prediction using Machine Learning
+# 🧠 Diabetes Prediction AI
 
-## 📌 Project Overview
-This project predicts whether a person is diabetic using medical data such as Glucose level, BMI, Age, Blood Pressure, etc.  
-The goal is early detection of diabetes using Machine Learning (ML – Machine Learning).
+A machine learning web application that predicts the **risk of diabetes** using patient health metrics.  
+The model analyzes medical indicators such as glucose level, BMI, insulin level, and age to estimate diabetes probability.
+
+The application is deployed using **Streamlit** and built using **Python and Scikit-learn**.
 
 ---
 
-## 📊 Dataset
-Dataset used: **Kaggle Indians Diabetes Datasetset**
+# 🚀 Project Overview
+
+Diabetes is a common chronic disease that can lead to serious health complications if not detected early.  
+This project uses **machine learning classification models** to predict diabetes risk based on medical attributes.
+
+The system takes patient measurements as input and outputs a **risk probability and risk level**.
+
+---
+
+# 📊 Dataset
+
+Dataset used: **Pima Indians Diabetes Dataset**
+
+Source:  
+UCI Machine Learning Repository / Kaggle
+
+Dataset characteristics:
+
+- **768 patient records**
+- **8 medical features**
+- Binary target variable (Diabetes / No Diabetes)
 
 Features:
-- Pregnancies
-- Glucose
-- BloodPressure
-- SkinThickness
-- Insulin
-- BMI (Body Mass Index)
-- DiabetesPedigreeFunction
-- Age
 
-Target:
-- Outcome (0 = Non-diabetic, 1 = Diabetic)
+| Feature | Description |
+|------|------|
+| Pregnancies | Number of pregnancies |
+| Glucose | Plasma glucose concentration |
+| BloodPressure | Diastolic blood pressure |
+| SkinThickness | Triceps skin fold thickness |
+| Insulin | 2-hour serum insulin |
+| BMI | Body Mass Index |
+| DiabetesPedigreeFunction | Genetic diabetes likelihood |
+| Age | Age of patient |
 
----
+Target variable:
+Outcome
+0 → No Diabetes
+1 → Diabetes
 
-## 🛠️ Tools & Libraries
-- Python
-- Pandas (Python Data Analysis Library)
-- NumPy (Numerical Python Library)
-- Matplotlib & Seaborn
-- Scikit-learn (Machine Learning Library)
-- Joblib
 
 ---
 
-## ⚙️ Steps Performed
-1. Data Cleaning
-2. Exploratory Data Analysis (EDA – Exploratory Data Analysis)
-3. Train-Test Split
-4. Feature Scaling
-5. Model Training
-6. Model Evaluation
-7. Feature Importance Analysis
-8. Model Saving
+# 🔍 Exploratory Data Analysis (EDA)
+
+Key insights discovered during analysis:
+
+- **Glucose level** has the strongest correlation with diabetes.
+- **BMI and Age** also show strong influence.
+- The dataset contains some **missing values represented as zeros**, which were cleaned during preprocessing.
+
+Visualizations created:
+
+- Outcome distribution
+- Correlation heatmap
+- Glucose vs diabetes outcome
+- BMI vs diabetes outcome
+- Feature importance chart
 
 ---
 
-## 🤖 Models Used
-- Logistic Regression
-- Decision Tree
-- Random Forest
+# 🧹 Data Preprocessing
+
+The following preprocessing steps were performed:
+
+- Replaced invalid **zero values** in medical columns with missing values
+- Filled missing values using **median imputation**
+- Split dataset into **training and testing sets**
+- Feature scaling applied where required
 
 ---
 
-## 📈 Final Result
-Random Forest achieved **75.3% accuracy** and was selected as final model.
+# 🤖 Machine Learning Models
 
-Feature importance showed **Glucose, BMI, and Age** as most important factors.
+Multiple models were tested:
+
+| Model | Purpose |
+|------|------|
+| Logistic Regression | Baseline linear model |
+| Random Forest | Ensemble decision tree model |
+| Gradient Boosting | Advanced boosting model |
+
+The **best performing model** was selected based on **ROC-AUC score**.
+
+Final model used:
+
+
+Random Forest Classifier
+
 
 ---
 
-## ▶️ How to Run
+# 📈 Model Performance
 
-1. Install requirements:
+Evaluation metrics:
 
-Run -
-python src/predict.py
+| Metric | Value |
+|------|------|
+Accuracy | ~74–78% |
+ROC-AUC Score | ~0.82 |
+
+These results indicate a strong ability to distinguish between diabetic and non-diabetic patients.
+
+---
+
+# 🖥️ Web Application
+
+The trained model is deployed as an **interactive Streamlit dashboard**.
+
+Users can enter patient health measurements and instantly receive:
+
+- Diabetes risk probability
+- Risk classification (Low / Moderate / High / Very High)
+
+Example dashboard features:
+
+- Medical input units
+- Risk probability indicator
+- Model information panel
+
+---
+
+# ⚙️ Tech Stack
+
+Programming Language:
+
+
+Python
+
+
+Libraries Used:
+
+
+Pandas
+NumPy
+Scikit-learn
+Matplotlib
+Seaborn
+Streamlit
+Joblib
+
+
+---
+
+# 📂 Project Structure
+
+
+Diabetes-Prediction-Data-Science
+│
+├── datasets
+│ └── diabetes.csv
+│
+├── notebooks
+│ └── diabetes_analysis.ipynb
+│
+├── src
+│ └── diabetes_model.pkl
+│
+├── app
+│ └── streamlit_app.py
+│
+├── requirements.txt
+└── README.md
+
+
+---
+
+# ▶️ How to Run
+
+### 1 Install dependencies
+
+
+pip install -r requirements.txt
+
+
+### 2 Run the application
+
+
+streamlit run app/streamlit_app.py
+
+
+---
+
+# 📸 Application Preview
+## Dashboard Preview
+
+![Dashboard](dashboard.png)
+---
+
+# 👨‍💻 Author
+
+Ravendra Choudhary
+
+BTech – Electronics & Communication Engineering
+
+Interested in:
+
+- Artificial Intelligence
+- Machine Learning
+- Data Science
+
+---
+
+# ⭐ If you like this project
+
+Please consider giving the repository a **star**.
